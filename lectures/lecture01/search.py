@@ -8,14 +8,16 @@ target = 22
 #    i += 1
 #print(i)
 
-# A linear time algorithm T(N) = N 
-#i = 0 
-#while li[i] != target and i < len(li): # worst case: N iterations
-#    i += 1
-#if i >= len(li): 
-#    print("not in list")
-#else: 
-#    print(i)
+
+# A linear time algorithm T(N) = N, Linear Search 
+
+i = 0 
+while li[i] != target and i < len(li): # worst case: N iterations
+    i += 1
+if i >= len(li): 
+    print("not in list")
+else: 
+    print(i)
 
 #for i,x in enumerate(li):
 #    if x == target: 
@@ -24,8 +26,9 @@ target = 22
 #if i >= len(li):
 #    print("not in list") 
     
-target = 19
 
+
+# A logarithmic time algorithm T(N) = log_2 N, Binary Search
 left = 0 
 right = len(li)-1
 mid = (left + right) // 2
