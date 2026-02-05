@@ -8,13 +8,26 @@
 #simba_age = 5
 #simba_fur_color = "yellow"
 
-a = [1,2,3]
-print(a.__len__())
-print(len(a))
+#a = [1,2,3]
+#print(a.__len__())
+#print(len(a))
 
-class Lion: 
+class Animal:
+    
+    def __init__(self):
+        self.name = "unknown"
+        self.stomach = []
+
+    def eat(self, food):
+        self.stomach.append(food)
+
+    def speak(self,): 
+        print(f"My name is {self.name}")
+
+class Lion(Animal): 
 
     def __init__(self, name, age, color ): # Constructor
+        super().__init__() # call the parent constructor 
         self.name = name
         self.age = age
         self.fur_color = color
@@ -22,19 +35,29 @@ class Lion:
     def speak(self):
         print(f"ROAR, my name is {self.name}")
 
-class Elephant:
+class Elephant(Animal):
 
     def __init__(self, name, age):
+        super().__init__()
         self.name = name
         self.age = age 
 
-    def speak(self,): 
-        print(f"Tooot: My name is {self.name}")
+    
 
 nala = Lion("Nala", 4, "white")
 simba = Lion("Simba", 5, "yellow")
-elephant = Elephant("Dumbo", 6)
+dumbo = Elephant("Dumbo", 6)
 
-animals = [nala, simba, elephant]
-for animal in animals: 
-    animal.speak()
+#simba.eat("chicken")
+#elephant.eat("leaves")
+
+#animals = [nala, simba, elephant]
+#for animal in animals: 
+#    animal.speak()
+
+#print(isinstance(nala, Animal))
+nala.eat("chicken")
+print(nala.stomach)
+
+dumbo.speak()
+nala.speak()
