@@ -52,11 +52,12 @@ class FileTree:
     self._find_directory(path_list).add_child(new_dir)
   
   def add_file(self, path, size): 
-    parts = path.split("/")[1:]
-    new_file_name = parts[-1]
-    path_list = parts[:-1]
-    new_file = File(new_file_name, size) 
-    self._find_directory(path_list).add_child(new_file)
+    self.better_add_file(path, size)
+    ##parts = path.split("/")[1:]
+    #new_file_name = parts[-1]
+    #path_list = parts[:-1]
+    #new_file = File(new_file_name, size) 
+    #self._find_directory(path_list).add_child(new_file)
 
   def print_tree(self, node=None, level=0):
 

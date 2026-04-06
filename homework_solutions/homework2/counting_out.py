@@ -18,6 +18,6 @@ while len(q) > 1:
   print(q.popleft(), "is out.")
 
   
-print(q.popleft(), "is the winner.")
+print(q.popleft(), "wins.")
   
 
